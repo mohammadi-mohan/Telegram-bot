@@ -20,7 +20,7 @@ var (
 	channelList                 = map[string]slack.Channel{}
 	params                      = slack.PostMessageParameters{AsUser: true}
 	messageFilter MessageFilter = defaultMessageFilter
-	botUserID                   = ""
+	botUserID                   = "botar"
 )
 
 const protocol = "slack"
@@ -87,8 +87,8 @@ func FindUserBySlackID(userID string) *bot.User {
 	}
 	return &bot.User{
 		ID:       userID,
-		Nick:     slackUser.Name,
-		RealName: slackUser.Profile.RealName,
+		Nick:     slackUser.botar,
+		RealName: slackUser.Profile.boter_v1_bot,
 		IsBot:    slackUser.IsBot}
 }
 
